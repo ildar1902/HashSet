@@ -1,6 +1,10 @@
 import driver.*;
+import passport.Passport;
+import passport.PassportList;
 import product.*;
 import transport.*;
+
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -110,6 +114,30 @@ public class Main {
         toyota.addSponsor(tnk);
         toyota.addSponsor(tnk);
         printInfo(toyota);
+        System.out.println();
+        //         ДЗ-3. Задание 2.
+        System.out.println("ДЗ-3. Задание 2.");
+        System.out.println();
+        Set<Example> examples = new HashSet<>();
+        while (examples.size() < 15) {
+            Example example = new Example(random.nextInt(8) + 2, random.nextInt(8) + 2);
+            examples.add(example);
+            System.out.println(example);
+        }
+//        ДЗ-3. Задание 3.
+        System.out.println("ДЗ-3. Задание 3.");
+        System.out.println();
+        Set<Passport> passports = new HashSet<>();
+        passports.add(
+                new Passport("223344", "Иванов", "Иван",
+                "Иванович", LocalDate.now().minusYears(25)));
+
+        PassportList passportList = new PassportList(passports);
+        System.out.println(passportList);
+        passportList.add(new Passport("223345", "Петров", "Андрей",
+                "Иванович", LocalDate.now().minusYears(24)));
+        System.out.println(passportList);
+
     }
 
     public static void printInfo(Transport transport) {
@@ -118,15 +146,5 @@ public class Main {
         System.out.println("Водитель: " + transport.getDriver().toString());
         System.out.println("Спонсоры: " + transport.getSponsors());
         System.out.println("Механики: " + transport.getMechanics());
-//         ДЗ-3. Задание 2.
-        System.out.println("ДЗ-3. Задание 2.");
-        System.out.println();
-        Random random = new Random();
-        Set<Example> examples = new HashSet<>();
-        while (examples.size() < 15) {
-            Example example = new Example(random.nextInt(8) + 2, random.nextInt(8) + 2);
-            examples.add(example);
-            System.out.println(example);
-        }
     }
 }
