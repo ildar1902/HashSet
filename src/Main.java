@@ -1,6 +1,7 @@
 import product.*;
 
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class Main {
@@ -35,5 +36,24 @@ public class Main {
         RecipeList recipeList = new RecipeList();
         recipeList.addRecipe(recipe1);
         System.out.println(recipeList);
+        recipeList.addRecipe(recipe2);
+        System.out.println(recipeList);
+        System.out.println();
+//        ДЗ-2. Задание 2.
+        System.out.println("ДЗ-2. Задание 2.");
+        System.out.println();
+        Random random = new Random();
+        Set<Integer> numbers = new HashSet<>();
+        while (numbers.size() < 20) {
+            numbers.add(random.nextInt(1000));
+        }
+        System.out.println("Было: " + numbers);
+        numbers.removeIf(number -> number % 2 == 1); //неплохо было бы если б нам подробнее рассказали про эту
+        //  функцию или про альтернативные варианты, как из эелементов множества удалить необходимые значения
+        // потому что в видео уроках и в шпаргалке не дали нам инструмент для решения этой части задачи
+        // максимум, что в шпаргалке про это написано - это то, что нельзя использовать foreach,
+        // а что делать вместо этого - ни слова. поэтому самостоятельно, без видео-разбора, нам выполнить эту
+//        задачу нереально, я пытался.
+        System.out.println("Стало: " + numbers);
     }
 }
