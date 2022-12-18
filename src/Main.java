@@ -1,4 +1,9 @@
+import driver.DriverB;
 import product.*;
+import transport.Car;
+import transport.Mechanic;
+import transport.Sponsor;
+import transport.Transport;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -55,5 +60,67 @@ public class Main {
         // а что делать вместо этого - ни слова. поэтому самостоятельно, без видео-разбора, нам выполнить эту
 //        задачу нереально, я пытался.
         System.out.println("Стало: " + numbers);
+
+//        ДЗ-3. Задание 1.
+        System.out.println("    ДЗ-3. Задание 1.");
+        System.out.println();
+        Mechanic<Car> fedor = new Mechanic<>(
+                "Фёдор",
+                "Фёдоров",
+                "Garage");
+
+        Mechanic<Car> fedor2 = new Mechanic<>(
+                "Фёдор",
+                "Фёдоров",
+                "Garage");
+
+        Mechanic<Car> petr = new Mechanic<>(
+                "Пётр",
+                "Петров",
+                "Garage");
+
+        Mechanic<Car> petr2 = new Mechanic<>(
+                "Пётр",
+                "Петров",
+                "Garage");
+
+        Sponsor nikita = new Sponsor(
+                "ИП \"Никита\"",
+                800_000);
+
+        Sponsor tnk = new Sponsor(
+                "ТНК-НВ",
+                3_000_000);
+
+        DriverB dc1 = new DriverB(
+                "Сергей Вачевский",
+                true,
+                8, DriverB.Category.B);
+
+        Car toyota = new Car(
+                "Toyota",
+                "Altezza",
+                2.0,
+                dc1);
+        toyota.addMechanic(fedor);
+        toyota.addMechanic(fedor);
+        toyota.addMechanic(petr);
+        toyota.addMechanic(petr);
+        toyota.addMechanic(fedor2);
+        toyota.addMechanic(fedor2);
+        toyota.addMechanic(petr2);
+        toyota.addMechanic(petr2);
+        toyota.addSponsor(nikita);
+        toyota.addSponsor(nikita);
+        toyota.addSponsor(tnk);
+        toyota.addSponsor(tnk);
+        printInfo(toyota);
+    }
+    public static void printInfo(Transport transport) {
+        System.out.println("    Информация по транспорту \"" + transport.getBrand() + "\" \""
+                + transport.getModel() + "\":");
+        System.out.println("Водитель: " + transport.getDriver().toString());
+        System.out.println("Спонсоры: " + transport.getSponsors());
+        System.out.println("Механики: " + transport.getMechanics());
     }
 }
