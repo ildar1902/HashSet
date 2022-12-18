@@ -14,18 +14,18 @@ public class Main {
 
         System.out.println("    Урок Хеш и хеш-функции. Множества");
         System.out.println("Дз1. Задание 1");
-        Banana b1 = new Banana("банан", 89d, 2d);
-        Bread br1 = new Bread("Хлеб", 30d, 1d);
-        Milk m1 = new Milk("молоко", 59d, 2d);
+        Product banana = new Product("банан", 89d, 2d);
+        Product bread = new Product("Хлеб", 30d, 1d);
+        Product milk = new Product("молоко", 59d, 2d);
         ProductList productList = new ProductList("1");
         System.out.println(productList);
-        productList.addProduct(b1);
+        productList.addProduct(banana);
         System.out.println(productList);
-        productList.addProduct(br1);
+        productList.addProduct(bread);
         System.out.println(productList);
-        productList.addProduct(m1);
+        productList.addProduct(milk);
         System.out.println(productList);
-        productList.remove(br1);
+        productList.remove(bread);
         System.out.println(productList);
         System.out.println();
 //        ДЗ-2. Задание 1.
@@ -34,8 +34,8 @@ public class Main {
         Recipe recipe1 = new Recipe(productList, 148, "newRecipe");
         ProductList productList2 = new ProductList("2");
         Recipe recipe2 = new Recipe(productList2, 89, "newRecipe2");
-        productList2.addProduct(br1);
-        productList2.addProduct(m1);
+        productList2.addProduct(bread);
+        productList2.addProduct(milk);
         System.out.println(productList2);
         RecipeList recipeList = new RecipeList();
         recipeList.addRecipe(recipe1);
@@ -130,13 +130,34 @@ public class Main {
         Set<Passport> passports = new HashSet<>();
         passports.add(
                 new Passport("223344", "Иванов", "Иван",
-                "Иванович", LocalDate.now().minusYears(25)));
+                        "Иванович", LocalDate.now().minusYears(25)));
 
         PassportList passportList = new PassportList(passports);
         System.out.println(passportList);
         passportList.add(new Passport("223345", "Петров", "Андрей",
                 "Иванович", LocalDate.now().minusYears(24)));
         System.out.println(passportList);
+
+//        Дз-3. Задание 4.
+//        Дан метод:
+//        private void process (Collection < Integer > firstCollection, List < Integer > list){
+//            if (firstCollection.containsAll(list)) {
+//                System.out.println("Первая коллекция содержит все элементы списка");
+//            } else {
+//                System.out.println("Некоторые (или все) элементы из списка отсутствуют в первой коллекции");
+//            }
+//        }
+//В качестве первого параметра метод может принять любую коллекцию
+// (ArrayList, LinkedList, ArrayDeque, HashSet, TreeSet и т. д.)
+//Какой из этих коллекций понадобится меньше времени на выполнение данного метода при большом наборе данных? Почему?
+// ArrayList.
+// LinkedList.
+// HashSet.
+//                Мой вариант ответа:
+//        в данном случае логичнее будет использовать вариант 3 - HashSet,
+//        т.к. при вызове метода containsAll у ArrayList и LinkedList поиск будет
+//        вестись по всем элементам. а у HashSet поиск ведётся по хеш-коду, что значительно ускоряет поиск.
+
 
     }
 

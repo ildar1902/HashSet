@@ -2,7 +2,7 @@ package product;
 
 import java.util.Objects;
 
-public abstract class Product {
+public class Product {
     private String name;
     private Double price;
     private Double volume;
