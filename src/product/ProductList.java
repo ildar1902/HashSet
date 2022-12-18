@@ -5,8 +5,18 @@ import java.util.Set;
 public class ProductList {
 
     private final Set<Product> products = new HashSet<>();
+    private String name;
 
-    public ProductList() {
+    public ProductList(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void addProduct(Product product) {
@@ -25,6 +35,6 @@ public class ProductList {
 
     @Override
     public String toString() {
-        return "В списке: " + products;
+        return "В " + getName() +  " списке: " + products;
     }
 }

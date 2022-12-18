@@ -22,4 +22,9 @@ public class RecipeList {
         recipes.remove(recipe);
         System.out.println("Убрали из списка " + recipe.getName());
     }
+
+    @Override
+    public String toString() {
+        return   "В списке рецептов: " + recipes;
+    }
 }

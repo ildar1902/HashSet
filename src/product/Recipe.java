@@ -3,9 +3,9 @@ package product;
 import java.util.Objects;
 
 public class Recipe {
-    ProductList productList;
-    double count;
-    String name;
+    private ProductList productList;
+    private double count;
+    private String name;
 
     public Recipe(ProductList productList, double count, String name) {
         this.productList = productList;
@@ -48,5 +48,11 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ", который содержит " + productList +
+                ", общая стоимость продуктов в рецепте: " + count + " рублей";
     }
 }
