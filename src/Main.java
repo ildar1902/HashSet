@@ -1,10 +1,6 @@
-import driver.DriverB;
+import driver.*;
 import product.*;
-import transport.Car;
-import transport.Mechanic;
-import transport.Sponsor;
-import transport.Transport;
-
+import transport.*;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -15,7 +11,6 @@ public class Main {
         System.out.println("    Урок Хеш и хеш-функции. Множества");
         System.out.println("Дз1. Задание 1");
         Banana b1 = new Banana("банан", 89d, 2d);
-        Banana b2 = new Banana("банан", 89d, 2d);
         Bread br1 = new Bread("Хлеб", 30d, 1d);
         Milk m1 = new Milk("молоко", 59d, 2d);
         ProductList productList = new ProductList("1");
@@ -116,11 +111,22 @@ public class Main {
         toyota.addSponsor(tnk);
         printInfo(toyota);
     }
+
     public static void printInfo(Transport transport) {
         System.out.println("    Информация по транспорту \"" + transport.getBrand() + "\" \""
                 + transport.getModel() + "\":");
         System.out.println("Водитель: " + transport.getDriver().toString());
         System.out.println("Спонсоры: " + transport.getSponsors());
         System.out.println("Механики: " + transport.getMechanics());
+//         ДЗ-3. Задание 2.
+        System.out.println("ДЗ-3. Задание 2.");
+        System.out.println();
+        Random random = new Random();
+        Set<Example> examples = new HashSet<>();
+        while (examples.size() < 15) {
+            Example example = new Example(random.nextInt(8) + 2, random.nextInt(8) + 2);
+            examples.add(example);
+            System.out.println(example);
+        }
     }
 }
