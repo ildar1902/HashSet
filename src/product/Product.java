@@ -1,8 +1,6 @@
 package product;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public abstract class Product {
     private String name;
@@ -14,8 +12,6 @@ public abstract class Product {
         setPrice(price);
         setVolume(volume);
     }
-
-
 
     public String getName() {
         return name;

@@ -1,6 +1,5 @@
 import product.*;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +14,7 @@ public class Main {
         Bread br1 = new Bread("Хлеб", 30d, 1d);
         Milk m1 = new Milk("молоко", 59d, 2d);
         ProductList productList = new ProductList();
+        System.out.println(productList);
         productList.addProduct(b1);
         System.out.println(productList);
         productList.addProduct(br1);

@@ -4,7 +4,11 @@ import java.util.Set;
 
 public class ProductList {
 
-    private Set<Product> products = new HashSet<>();
+    private final Set<Product> products = new HashSet<>();
+
+    public ProductList() {
+    }
+
     public void addProduct(Product product) {
         if (products.contains(product)) {
             throw new IllegalArgumentException("В списке уже есть " + product.getName());
@@ -21,6 +25,6 @@ public class ProductList {
 
     @Override
     public String toString() {
-        return "В списке: " + products.toString();
+        return "В списке: " + products;
     }
 }
